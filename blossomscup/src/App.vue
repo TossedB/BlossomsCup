@@ -22,8 +22,11 @@ import PlayerCard from './components/PlayerCard.vue'
 const players = ref([])
 const pInput = ref()
 const fillPlayers = () => {
+  players.value = []
   try {
-    players.value = JSON.parse(pInput.value)
+    setTimeout(() => {
+      players.value = JSON.parse(pInput.value)
+    }, 10)
   } catch (e) {
     players.value = []
   }
